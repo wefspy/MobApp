@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.Create_VuborOsnova">
+    <ScrollView>
+        <StackLayout BackgroundColor="LightGray">
+            <Frame BackgroundColor="White" CornerRadius="20" Margin="5,10,5,0">
+                <StackLayout>
+                    <Label Text="Основная часть" HorizontalOptions="Center" TextColor="Black" FontSize="30" FontAttributes="Bold"/>
+                    <ImageButton x:Name="hands_create" Source="hands_create" CornerRadius="20" Clicked="ImageButton_Clicked"
+                                 BackgroundColor="#FFFFFF" Aspect="AspectFill" Padding="0,5,0,0"/>
+                    <ImageButton x:Name="hands_back" Source="hands_back" CornerRadius="20" Clicked="ImageButton_Clicked1_1" IsVisible="false"
+                                 BackgroundColor="#FFFFFF" Aspect="AspectFill" Padding="0,5,0,0"/>
+                    <StackLayout x:Name="hands" IsVisible="false">
+                        <ImageButton x:Name="pushups_classic" Source="pushups_classic" BackgroundColor="#FFFFFF" Clicked="Opis2_1_1"
+                                 CornerRadius="20" Aspect="AspectFill" Padding="0,5,0,0"/>
+                        <ImageButton x:Name="pushups_obratnue" Source="pushups_obratnue" BackgroundColor="#FFFFFF" Clicked="Opis2_1_2"
+                                 CornerRadius="20" Aspect="AspectFill" Padding="0,5,0,0"/>
+                        <ImageButton x:Name="pushups_uzko" Source="pushups_uzko" BackgroundColor="#FFFFFF" Clicked="Opis2_1_3"
+                                 CornerRadius="20" Aspect="AspectFill" Padding="0,5,0,0"/>
+                        <ImageButton x:Name="biceps" Source="biceps" BackgroundColor="#FFFFFF" Clicked="Opis2_1_4"
+                                 CornerRadius="20" Aspect="AspectFill" Padding="0,5,0,0"/>
+
+                    </StackLayout>
+                    <ImageButton x:Name="legs_create" Source="legs_create" CornerRadius="20" Clicked="ImageButton_Clicked_1" 
+                                 BackgroundColor="#FFFFFF" Aspect="AspectFill" Padding="0,5,0,0"/>
+                    <ImageButton x:Name="legs_back" Source="legs_back" CornerRadius="20" Clicked="ImageButton_Clicked_1_1" IsVisible="false"
+                                 BackgroundColor="#FFFFFF" Aspect="AspectFill" Padding="0,5,0,0"/>
+                    <StackLayout x:Name="legs" IsVisible="false">
+                        <ImageButton x:Name="prised_koleno" Source="prised_koleno" BackgroundColor="#FFFFFF" Clicked="Opis2_2_1"
+                                 CornerRadius="20" Aspect="AspectFill" Padding="0,5,0,0"/>
+                        <ImageButton x:Name="prised_socks"  Source="prised_socks" BackgroundColor="#FFFFFF" Clicked="Opis2_2_2"
+                                 CornerRadius="20" Aspect="AspectFill" Padding="0,5,0,0"/>
+                        <ImageButton x:Name="vupadu" Source="vupadu" BackgroundColor="#FFFFFF" Clicked="Opis2_2_3"
+                                 CornerRadius="20" Aspect="AspectFill" Padding="0,5,0,0"/>
+                        <ImageButton x:Name="vupadu_back"  Source="vupadu_back" BackgroundColor="#FFFFFF" Clicked="Opis2_2_4"
+                                 CornerRadius="20" Aspect="AspectFill" Padding="0,5,0,0"/>
+                    </StackLayout>
+                    <ImageButton x:Name="press_create" Source="press_create" CornerRadius="20" Clicked="ImageButton_Clicked_2" 
+                                 Background="#FFFFFF" Aspect="AspectFill" Padding="0,5,0,0"/>
+                    <ImageButton x:Name="press_back" Source="press_back" CornerRadius="20" Clicked="ImageButton_Clicked_2_1" IsVisible="false"
+                                 Background="#FFFFFF" Aspect="AspectFill" Padding="0,5,0,0"/>
+                    <StackLayout x:Name="press" IsVisible="false">
+                        <ImageButton x:Name="twist" Source="twist" BackgroundColor="#FFFFFF" Clicked="Opis2_3_1"
+                                 CornerRadius="20" Aspect="AspectFill" Padding="0,5,0,0"/>
+                        <ImageButton x:Name="twist_hands" Source="twist_hands" BackgroundColor="#FFFFFF" Clicked="Opis2_3_2"
+                                 CornerRadius="20" Aspect="AspectFill" Padding="0,5,0,0"/>
+                        <ImageButton x:Name="prived_koleno" Source="prived_koleno" BackgroundColor="#FFFFFF" Clicked="Opis2_3_3"
+                                 CornerRadius="20" Aspect="AspectFill" Padding="0,5,0,0"/>
+                        <ImageButton x:Name="poduem" Source="poduem" BackgroundColor="#FFFFFF" Clicked="Opis2_3_4"
+                                 CornerRadius="20" Aspect="AspectFill" Padding="0,5,0,0"/>
+                    </StackLayout>
+                    <ImageButton x:Name="grud_create" Source="grud_create" CornerRadius="20" Clicked="ImageButton_Clicked_3" 
+                                 BackgroundColor="#FFFFFF" Aspect="AspectFill" Padding="0,5,0,0"/>
+                    <ImageButton x:Name="grud_back" Source="grud_back" CornerRadius="20" Clicked="ImageButton_Clicked_3_1" IsVisible="false"
+                                 BackgroundColor="#FFFFFF" Aspect="AspectFill" Padding="0,5,0,0"/>
+                    <StackLayout x:Name="grud" IsVisible="false">
+                        <ImageButton x:Name="gantela" Source="gantela" BackgroundColor="#FFFFFF" Clicked="Opis2_4_1"
+                                 CornerRadius="20" Aspect="AspectFill" Padding="0,5,0,0"/>
+                        <ImageButton x:Name="razved_gantela" Source="razved_gantela" BackgroundColor="#FFFFFF" Clicked="Opis2_4_2"
+                                 CornerRadius="20" Aspect="AspectFill" Padding="0,5,0,0"/>
+                    </StackLayout>
+                    <ImageButton x:Name="back_create" Source="back_create" CornerRadius="20" Clicked="ImageButton_Clicked_4" 
+                                 BackgroundColor="#FFFFFF" Aspect="AspectFill" Padding="0,5,0,0"/>
+                    <ImageButton x:Name="back_back" Source="back_back" CornerRadius="20" Clicked="ImageButton_Clicked_4_1" IsVisible="false"
+                                 BackgroundColor="#FFFFFF" Aspect="AspectFill" Padding="0,5,0,0"/>
+                    <StackLayout x:Name="back" IsVisible="false">
+                        <ImageButton x:Name="lodka" Source="lodka" BackgroundColor="#FFFFFF" Clicked="Opis2_5_1"
+                                 CornerRadius="20" Aspect="AspectFill" Padding="0,5,0,0"/>
+                        <ImageButton x:Name="gantela_nadgolovoi"  Source="gantela_nadgolovoi" BackgroundColor="#FFFFFF" Clicked="Opis2_5_2"
+                                 CornerRadius="20" Aspect="AspectFill" Padding="0,5,0,0"/>
+                        <ImageButton x:Name="taga_gantela" Source="taga_gantela" BackgroundColor="#FFFFFF" Clicked="Opis2_5_3"
+                                 CornerRadius="20" Aspect="AspectFill" Padding="0,5,0,0"/>
+                        <ImageButton x:Name="shuka" Source="shuka" BackgroundColor="#FFFFFF" Clicked="Opis2_5_4"
+                                 CornerRadius="20" Aspect="AspectFill" Padding="0,5,0,0"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

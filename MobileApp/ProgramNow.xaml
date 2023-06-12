@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.ProgramNow">
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Текущая программа" FontSize="24" FontAttributes="Bold"
+                   HorizontalOptions="Center" TextColor="Black" Margin="0,10,0,0"/>
+            <Image Source="firstweek1" Margin="20,10,20,0"/>
+            <Image Source="secondweek1" Margin="20,10,20,0"/>
+            <Image Source="thirdweek1" Margin="20,10,20,0"/>
+            <Image Source="fourthweek1" Margin="20,10,20,0"/>
+            <Button Text="Тренироваться" TextColor="#ffff" BackgroundColor="#1B8DEB" CornerRadius="20" HeightRequest="50" Margin="30,10,30,20"
+                    FontSize="15" FontAttributes="Bold" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
