@@ -83,5 +83,10 @@ namespace MobileApp
             _textPaint.MeasureText(_timerValue.ToString(), ref textBounds);
             canvas.DrawText(_timerValue.ToString(), centerX - textBounds.MidX, centerY - textBounds.MidY, _textPaint);
         }
+
+        public void Paint(SKPaintSurfaceEventArgs e)
+        {
+            this.OnPaintSurface(e);
+        }
     }
 }

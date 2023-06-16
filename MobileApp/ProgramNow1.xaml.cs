@@ -50,7 +50,7 @@ namespace MobileApp
         {
             var exercises = App.Db.GetCurExs(App.Db.GetCurDay(), App.Db.GetCurWeek());
             if(exercises.Count > 0)
-                await Navigation.PushAsync(new PreparationTraining(exercises, 0));
+                await Navigation.PushAsync(new PreparationTraining(exercises, 0, 0));
         }
     }
 }

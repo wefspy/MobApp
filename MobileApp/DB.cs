@@ -65,10 +65,10 @@ namespace MobileApp
         }
 
 
-        public void UpdateCurDate() // По идее можно не удалять и не добавлять.
+        public void UpdateCurDate()
         {
             var curDate = this.curDate.Table<CurDate>().First();
-            this.curDate.Delete(curDate);
+            this.curDate.DeleteAll<CurDate>();
             if (curDate.CurDay == 6)
             {
                 curDate.CurDay = 0;
@@ -77,6 +77,12 @@ namespace MobileApp
             }
             else curDate.CurDay++;
             this.curDate.Insert(curDate);
+        }
+
+        public void RestartDate()
+        {
+            curDate.DeleteAll<CurDate>();
+            curDate.Insert(new CurDate());
         }
 
         public void TransferFromCreateToCurEx(ProgramType programType)
@@ -106,6 +112,5 @@ namespace MobileApp
             curProgram.DeleteAll<curProgram>();
             curProgram.Insert(new curProgram() { Program = programType });
         }
-
     }
 }

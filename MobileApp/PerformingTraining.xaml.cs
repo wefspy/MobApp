@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FFImageLoading;
 using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using Xamarin.Forms;
@@ -11,32 +10,31 @@ using Xamarin.Forms.Xaml;
 
 namespace MobileApp
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PreparationTraining : ContentPage
-    {
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class PerformingTraining : ContentPage
+	{
         private List<Exercise> exercises;
         private int numberEx;
         private int numberApproache;
         private bool isDrawing = true;
-        private int timerValue = 10;
-        private int timerThreshold = 10;
-        public PreparationTraining(List<Exercise> exercises, int numberEx, int numberApproache)
-        {
-            InitializeComponent();
+        private int timerValue;
+        private int timerThreshold;
+        public PerformingTraining(List<Exercise> exercises, int numberEx, int numberApproache)
+		{
+			InitializeComponent();
             this.exercises = exercises;
             this.numberEx = numberEx;
             this.numberApproache = numberApproache;
             GifcurEx.Source = exercises[numberEx].Anim;
-            ExerciseName.Text = exercises[numberEx].Day.ToString();
+            timerValue = timerThreshold = int.Parse(exercises[numberEx].NumberRepetitions) * exercises[numberEx].Time;
             StartDrawing();
         }
-
         private async void StartDrawing()
         {
             isDrawing = true;
             while (isDrawing)
             {
-                if (timerValue == 0) SwitchOnExercise();
+                if (timerValue == 0) SwitchExercise();
                 Timer.InvalidateSurface();
                 await Task.Delay(1000);
                 timerValue--;
@@ -97,23 +95,27 @@ namespace MobileApp
             timerThreshold += 20;
         }
 
-        private async void SkipExercise(object sender, EventArgs e)
+        private void Skip(object sender, EventArgs e)
         {
-            numberEx++;
-            if (numberEx != exercises.Count)
-                await Navigation.PushAsync(new PreparationTraining(exercises, numberEx, numberApproache));
+            SwitchExercise();
+        }
+
+        private async void SwitchExercise()
+        {
+
+            if (numberApproache == int.Parse(exercises[numberEx].NumberApproaches))
+            {
+                numberApproache = 0;
+                numberEx++;
+                if (numberEx != exercises.Count)
+                    await Navigation.PushAsync(new PreparationTraining(exercises, numberEx, numberApproache));
+                else
+                    await Navigation.PushAsync(new CompletionTraining());
+            }
             else
-                await Navigation.PushAsync(new CompletionTraining());
-        }
-
-        private void SkipWaiting(object sender, EventArgs e)
-        {
-            SwitchOnExercise();
-        }
-
-        private async void SwitchOnExercise()
-        {
-            await Navigation.PushAsync(new PerformingTraining(exercises, numberEx, numberApproache));
+            {
+                await Navigation.PushAsync(new PreparationTraining(exercises, numberEx, ++numberApproache));
+            }
         }
     }
 }

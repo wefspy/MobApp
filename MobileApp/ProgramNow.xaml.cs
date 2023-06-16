@@ -15,10 +15,30 @@ namespace MobileApp
         public ProgramNow()
         {
             InitializeComponent();
+            DefineImageWeek();
         }
         private async void Button_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ProgramNow1());
+        }
+
+        private void DefineImageWeek()
+        {
+            var weeks = new List<Image>() { week0, week1, week2, week3 };
+            var curWeek = App.Db.GetCurWeek();
+            for (int i = 0; i < curWeek; i++)
+                weeks[i].Source = "workWeekDay7";
+            for(int i = 2; i > curWeek; i--)
+                weeks[i].Source = "workWeekDay0";
+      
+            string variableName;
+            if (curWeek == 3) variableName = "lastWeekDay";
+            else
+            {
+                weeks[3].Source = "lastWeekDay0";
+                variableName = "workWeekDay";
+            }
+            weeks[curWeek].Source = variableName + App.Db.GetCurDay().ToString();
         }
     }
 }

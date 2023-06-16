@@ -24,6 +24,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="CompletionTraining.xaml.cs">
+      <DependentUpon>CompletionTraining.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="PerformingTraining.xaml.cs">
+      <DependentUpon>PerformingTraining.xaml</DependentUpon>
+    </Compile>
     <Compile Update="PreparationTraining.xaml.cs">
       <DependentUpon>PreparationTraining.xaml</DependentUpon>
     </Compile>
@@ -118,6 +124,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Page3.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CompletionTraining.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PerformingTraining.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="PreparationTraining.xaml">

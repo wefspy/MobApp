@@ -63,6 +63,7 @@ namespace MobileApp
         private void FinishCreateProgram()
         {
             App.Db.TransferFromCreateToCurEx(ProgramType.Created);
+            App.Db.RestartDate();
         }
 
         private void OnDeleteButton_Clicked(object sender, EventArgs e)
